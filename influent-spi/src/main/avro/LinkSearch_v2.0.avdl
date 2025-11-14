@@ -44,7 +44,7 @@ protocol FL_LinkSearch {
 	 */
 	FL_SearchResults search(
 		map<array<FL_PropertyMatchDescriptor>> termMap,
-		array<FL_OrderBy> orderBy = null,
+		union {null, array<FL_OrderBy>} orderBy = null,
 		long start = 0,
 		long max = -1,
 		FL_LevelOfDetail levelOfDetail
