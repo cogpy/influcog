@@ -91,10 +91,10 @@ protocol FL_DataAccess {
 	 */
 	map<array<FL_Link>> getFlowAggregation(
 		array<string> entities,
-		union {array<string>, null} focusEntities,
+		union {null, array<string>} focusEntities,
 		FL_DirectionFilter direction,
 		FL_LinkEntityTypeFilter entityType,
-		union {FL_DateRange, null} date
+		union {null, FL_DateRange} `date`
 	);
 
 	//------------------------------------------------------------------------------------------------------------------
@@ -115,7 +115,7 @@ protocol FL_DataAccess {
 	 */
 	map<array<FL_Link>> getTimeSeriesAggregation(
 		array<string> entities,
-		union {array<string>, null} focusEntities,
-		FL_DateRange date
+		union {null, array<string>} focusEntities,
+		FL_DateRange `date`
 	);
 }
