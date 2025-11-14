@@ -43,7 +43,7 @@ protocol FL_EntitySearch {
 	 */
 	FL_SearchResults search(
 		map<array<FL_PropertyMatchDescriptor>> termMap,   // CHANGED IN 1.9
-		array<FL_OrderBy> orderBy = null,                 // ADDED IN 2.0
+		union {null, array<FL_OrderBy>} orderBy = null,                 // ADDED IN 2.0
 		long start = 0,
 		long max = -1,
 		FL_LevelOfDetail levelOfDetail

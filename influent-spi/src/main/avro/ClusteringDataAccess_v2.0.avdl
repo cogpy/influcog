@@ -148,9 +148,9 @@ protocol FL_ClusteringDataAccess {
 	 */
 	map<array<FL_Link>> getFlowAggregation(
 		array<string> entities,
-		union {array<string>, null} focusEntities,
+		union {null, array<string>} focusEntities,
 		FL_DirectionFilter direction,
-		union {FL_DateRange, null} date,
+		union {null, FL_DateRange} `date`,
 		string entitiesContextId,
 		union {null, string} focusContextId
 	);		// CHANGED IN 1.8
@@ -178,8 +178,8 @@ protocol FL_ClusteringDataAccess {
 	 */
 	map<array<FL_Link>> getTimeSeriesAggregation(
 		array<string> entities,
-		union {array<string>, null} focusEntities,
-		FL_DateRange date,
+		union {null, array<string>} focusEntities,
+		FL_DateRange `date`,
 		string entitiesContextId,
 		union {null, string} focusContextId);		// CHANGED IN 1.8
 
